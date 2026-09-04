@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #e8e8e8;
+  --surface: #2a2a2a;
+  --surface-elevated: #333333;
+  --brand: #22c55e;
+  --brand-foreground: #052e16;
+  --copy-muted: #a3a3a3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-copy-muted: var(--copy-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--surface-elevated);
+  border-top-color: var(--brand);
+  border-radius: 9999px;
+  animation: spin 0.7s linear infinite;
+}
+
+.form-textarea {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-elevated) var(--background);
+}
+
+.form-textarea::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.form-textarea::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 9999px;
+}
+
+.form-textarea::-webkit-scrollbar-thumb {
+  background: var(--surface-elevated);
+  border-radius: 9999px;
+}
+
+.form-textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--copy-muted);
 }

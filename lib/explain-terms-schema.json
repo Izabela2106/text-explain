@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string",
+            "description": "The exact word or multi-word phrase from the text worth explaining."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "A short, plain-language explanation of the term (one or two sentences)."
+          }
+        },
+        "required": ["term", "explanation"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["terms"],
+  "additionalProperties": false
+}
