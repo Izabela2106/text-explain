@@ -70,7 +70,6 @@ export function Form() {
     setAnnotations([]);
 
     const result = await analyzeTextAction(text);
-    console.log("[handleSubmit] analyzeText result:", result);
 
     if (!result.ok) {
       setError(result.message);
