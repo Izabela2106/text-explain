@@ -2,6 +2,8 @@
 
 TextExplain takes a passage you paste in and returns the same text with hover tooltips on key words and concepts. A language model proposes terms worth explaining; the app then finds those phrases in the original text and draws underlined, hoverable annotations.
 
+**Live demo:** [https://text-explain.vercel.app](https://text-explain.vercel.app)
+
 ## How it works
 
 The home page is a form: paste text, click **Explain text**, and wait for an annotated copy of that text. Hover a highlighted phrase to read a short explanation.
